@@ -1,0 +1,23 @@
+﻿@using ViewsFromDatabase.Areas.ViewModels
+@model CMSPageViewModel
+@{
+    ViewData["Title"] = "Edit CMS page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="panel-body">
+            <form method="post">
+                <div class="form-control">
+                    <label asp-for="Name" class="input-label"></label>
+                    <input asp-for="Name" class="custom-control-input" />
+                </div>
+
+                <div class="form-control">
+                    <label asp-for="Content" class="input-label"></label>
+                    <textarea asp-for="Content" class="custom-control-input" style="width: 100%; min-height: 600px"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@using ViewsFromDatabase.Models
+@model IEnumerable<CMSPage>
+@{
+    ViewData["Title"] = "CMS pages";
+}
+
+<div class="panel">
+  <div class="panel-header">
+      <h1>CMS Pages</h1>
+  </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Id)</td>
+                        <td>@Html.DisplayNameFor(model => model.Name)</td>
+                        <td>@Html.DisplayNameFor(model => model.Location)</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var mpage in Model)
+                    {
+                    <tr>
+                        <td>@mpage.Id</td>
+                        <td>@mpage.Name</td>
+                        <td>@mpage.Location</td>
+                        <td><a asp-action="Edit" asp-route-id="@mpage.Id">Edit</a><a asp-action="Preview" asp-route-id="@mpage.Id">Preview</a><a asp-action="Delete" asp-route-id="@mpage.Id">Delete</a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

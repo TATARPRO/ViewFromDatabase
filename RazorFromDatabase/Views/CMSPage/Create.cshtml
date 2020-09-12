@@ -1,0 +1,28 @@
+﻿@using RazorFromDatabase.Areas.ViewModels
+@model PageViewModel
+@{
+    ViewData["Title"] = "Create CMS page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="panel-body">
+            <form method="post">
+                <div class="form-control">
+                    <label asp-for="Name" class="input-label"></label>
+                    <input asp-for="Name" class="" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-control">
+                    <label asp-for="Content" class="input-label"></label>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                    <textarea asp-for="Content" class="" style="width: 100%; min-height: 600px"></textarea>
+                </div>
+                <div class="form-control">
+                    <input type="submit" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
